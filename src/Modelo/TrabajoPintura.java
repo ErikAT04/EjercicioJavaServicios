@@ -37,12 +37,6 @@ public class TrabajoPintura extends Servicio {
     public double costeManoObra() {
         return (superficie/10)*9.5;
     }
-
-    @Override
-    public double costeTotal() {
-        return costeMaterial()+costeManoObra()+costeExtra();
-    }
-
     public double costeExtra(){
         double coste=costeManoObra()+costeMaterial();
         if (superficie < 50){
@@ -51,6 +45,12 @@ public class TrabajoPintura extends Servicio {
             return 0;
         }
     }
+    @Override
+    public double costeTotal() {
+        return costeMaterial()+costeManoObra()+costeExtra();
+    }
+
+
 
 
 
